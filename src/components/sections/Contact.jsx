@@ -5,7 +5,9 @@ export const Contact = ({ t }) => {
   return (
     <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-400 to-amber-400 bg-clip-text text-transparent">{t.contact.title}</h2>
+        <h2 className="section-title">
+          <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-amber-400 bg-clip-text text-transparent">{t.contact.title}</span>
+        </h2>
         <p className="text-xl text-gray-300 mb-8">
           {t.contact.description}
         </p>

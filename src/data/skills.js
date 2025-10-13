@@ -1,5 +1,14 @@
 export const skills = [
-  "C#", ".NET", "ASP.NET", "JavaScript", "HTML", "CSS", 
-  "Bootstrap", "JSP", "SQL Server", "Git", "RESTful API", "Problem Solving"
+  // Backend frameworks & languages
+  "ASP.NET", "Spring Boot", "JSP", "Java",
+  // Frontend frameworks & languages
+  "React", "Angular", "JavaScript",
+  // Database
+  "SQL Server/MySQL",
+  "RESTful API",
+  // Styling
+  "Tailwind CSS", "Bootstrap",
+  // Tools
+  "Git",
 ];
 

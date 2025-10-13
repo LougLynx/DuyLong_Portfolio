@@ -1,21 +1,61 @@
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 export const Hero = ({ t, scrollToSection }) => {
+  // Typing animation for dynamic roles
+  const roles = [
+    'Java Developer',
+    'Frontend Developer',
+    'Backend Developer',
+    'Fullstack Developer'
+  ];
+
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const typingSpeed = 100; // ms per character while typing
+  const deletingSpeed = 60; // ms per character while deleting
+  const pauseAfterType = 1200; // ms pause when a word is fully typed
+  const pauseAfterDelete = 400; // ms pause before typing next word
+
+  useEffect(() => {
+    const currentRole = roles[roleIndex];
+    let timeoutId;
+
+    if (!isDeleting && charIndex < currentRole.length) {
+      timeoutId = setTimeout(() => setCharIndex((c) => c + 1), typingSpeed);
+    } else if (!isDeleting && charIndex === currentRole.length) {
+      timeoutId = setTimeout(() => setIsDeleting(true), pauseAfterType);
+    } else if (isDeleting && charIndex > 0) {
+      timeoutId = setTimeout(() => setCharIndex((c) => c - 1), deletingSpeed);
+    } else if (isDeleting && charIndex === 0) {
+      timeoutId = setTimeout(() => {
+        setIsDeleting(false);
+        setRoleIndex((i) => (i + 1) % roles.length);
+      }, pauseAfterDelete);
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [charIndex, isDeleting, roleIndex]);
+
+  const displayedRole = roles[roleIndex].slice(0, charIndex);
+  const isTyping = !isDeleting && charIndex < roles[roleIndex].length;
+  const displayedText = isTyping ? `${displayedRole}...` : displayedRole;
+
   return (
     <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 relative z-10 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
+        
           {/* Left Side - Photo */}
           <div className="flex justify-center lg:justify-end order-1 lg:order-1">
             <div className="relative group w-full max-w-lg">
               {/* Animated Background Rings */}
-              <div className="absolute inset-0 -z-10">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 via-blue-500 to-amber-500 rounded-[2.5rem] blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse"></div>
-                <div className="absolute -inset-4 bg-gradient-to-tr from-amber-500 via-cyan-500 to-blue-500 rounded-[3rem] blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
-              </div>
-              
+              <div className="absolute inset-0 -z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 via-blue-500 to-amber-500 rounded-[2.5rem] blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse"></div>
+              <div className="absolute -inset-4 bg-gradient-to-tr from-amber-500 via-cyan-500 to-blue-500 rounded-[3rem] blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
+            
               {/* Main Photo Container - Increased Height */}
               <div className="relative w-full aspect-[3/4] md:aspect-[2/3] lg:h-[600px]">
                 {/* Glowing Border Layer */}
@@ -39,7 +79,10 @@ export const Hero = ({ t, scrollToSection }) => {
                       <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                       <div>
                         <p className="text-white font-bold text-lg">Duy Long Tran</p>
-                        <p className="text-cyan-400 text-sm">.NET Developer</p>
+                        <p className="text-cyan-400 text-sm font-medium tracking-wide">
+                          {displayedText}
+                          <span className="ml-0.5 inline-block w-[1ch] -translate-y-px border-r-2 border-cyan-400 animate-pulse" aria-hidden="true"></span>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -55,7 +98,7 @@ export const Hero = ({ t, scrollToSection }) => {
               </div>
             </div>
           </div>
-          
+        
           {/* Right Side - Text Content */}
           <div className="text-center lg:text-left order-2 lg:order-2 space-y-6">
             {/* Greeting Badge */}
@@ -74,7 +117,10 @@ export const Hero = ({ t, scrollToSection }) => {
             {/* Title */}
             <div className="relative inline-block">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                {t.hero.title}
+                <span className="inline-flex items-center">
+                  {displayedText}
+                  <span className="ml-0.5 inline-block w-[1ch] -translate-y-px border-r-2 border-cyan-400 animate-pulse" aria-hidden="true"></span>
+                </span>
               </h2>
               <div className="h-1 bg-gradient-to-r from-cyan-400 to-amber-400 rounded-full"></div>
             </div>
@@ -121,7 +167,7 @@ export const Hero = ({ t, scrollToSection }) => {
               </a>
             </div>
           </div>
-          
+        
         </div>
         
         {/* Scroll Indicator */}
@@ -136,4 +182,3 @@ export const Hero = ({ t, scrollToSection }) => {
     </section>
   );
 };
-

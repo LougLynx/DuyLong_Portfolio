@@ -3,6 +3,7 @@ import { Footer } from './components/layout/Footer';
 import { Navigation } from './components/layout/Navigation';
 import { About } from './components/sections/About';
 import { Activities } from './components/sections/Activities';
+import { Blog } from './components/sections/Blog';
 import { Contact } from './components/sections/Contact';
 import { Education } from './components/sections/Education';
 import { Experience } from './components/sections/Experience';
@@ -11,6 +12,7 @@ import { Projects } from './components/sections/Projects';
 import { References } from './components/sections/References';
 import { AnimatedBackground } from './components/ui/AnimatedBackground';
 import { FloatingCodes } from './components/ui/FloatingCodes';
+import { getBlogs } from './data/blogs';
 import { getActivities, getEducation, getExperience, references } from './data/experience';
 import { getProjects } from './data/projects';
 import { translations } from './data/translations';
@@ -28,6 +30,7 @@ const App = () => {
   const experience = getExperience(language);
   const education = getEducation(language);
   const activities = getActivities(language);
+  const blogs = getBlogs(language);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white relative overflow-hidden">
@@ -56,6 +59,9 @@ const App = () => {
 
       {/* Projects Section */}
       <Projects t={t} projects={projects} />
+
+      {/* Blog Section */}
+      <Blog t={t} blogs={blogs} />
 
       {/* Education Section */}
       <Education t={t} education={education} />

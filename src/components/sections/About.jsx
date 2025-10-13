@@ -7,7 +7,7 @@ export const About = ({ t }) => {
     <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
+          <h2 className="section-title">
             <GraduationCap className="text-cyan-400 drop-shadow-lg" />
             <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">{t.about.title}</span>
           </h2>
@@ -31,7 +31,7 @@ export const About = ({ t }) => {
                 {/* Main Image Frame */}
                 <div className="relative h-full rounded-[2rem] overflow-hidden border-4 border-slate-900/40 shadow-2xl shadow-amber-500/20 transform group-hover:scale-[1.02] transition-all duration-500">
                   <img 
-                    src="./Asset/avatar.jpg" 
+                    src="./Asset/avatar2.jpg" 
                     alt="Duy Long Tran - Software Engineer" 
                     className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700"
                   />
@@ -52,7 +52,7 @@ export const About = ({ t }) => {
                       <p className="text-white font-bold text-lg">Available for opportunities</p>
                     </div>
                     <p className="text-amber-400 font-semibold">.NET Developer</p>
-                    <p className="text-gray-300 text-sm">FPT University • Class of 2026</p>
+                    <p className="text-gray-300 text-sm">FPT University</p>
                   </div>
                 </div>
                 

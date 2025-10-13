@@ -4,6 +4,7 @@ export const translations = {
       about: "About",
       experience: "Experience",
       projects: "Projects",
+      blog: "Journal",
       education: "Education",
       activities: "Activities",
       contact: "Contact"
@@ -27,7 +28,18 @@ export const translations = {
     projects: {
       title: "Featured Projects",
       code: "Code",
-      liveDemo: "Live Demo"
+      liveDemo: "Live Demo",
+      seeMore: "See More Projects",
+      seeLess: "See Less"
+    },
+    blog: {
+      title: "Life Journal",
+      readMore: "Read More",
+      backToBlog: "Back to Journal",
+      postedOn: "Posted on",
+      tags: "Tags",
+      seeMore: "See More Blogs",
+      seeLess: "See Less"
     },
     education: {
       title: "Education",
@@ -35,8 +47,9 @@ export const translations = {
     },
     activities: {
       title: "Activities",
-      jsClub: "Member of Japanese Software Engineers community",
-      tiepBuoc: "Participated in student development program"
+      jsClub: "A community of Japanese software engineers where programming enthusiasts and Japanese culture lovers gather",
+      tiepBuoc: "A charity project helping children in mountainous areas of Tuyen Quang province",
+      visitPage: "Visit Page"
     },
     references: {
       title: "References"
@@ -55,6 +68,7 @@ export const translations = {
       about: "Giới thiệu",
       experience: "Kinh nghiệm",
       projects: "Dự án",
+      blog: "Nhật ký",
       education: "Học vấn",
       activities: "Hoạt động",
       contact: "Liên hệ"
@@ -78,7 +92,18 @@ export const translations = {
     projects: {
       title: "Dự án nổi bật",
       code: "Mã nguồn",
-      liveDemo: "Demo trực tiếp"
+      liveDemo: "Demo trực tiếp",
+      seeMore: "Xem thêm dự án",
+      seeLess: "Thu gọn"
+    },
+    blog: {
+      title: "Nhật Ký",
+      readMore: "Đọc thêm",
+      backToBlog: "Quay lại Nhật ký",
+      postedOn: "Đăng ngày",
+      tags: "Thẻ",
+      seeMore: "Xem thêm bài viết",
+      seeLess: "Thu gọn"
     },
     education: {
       title: "Học vấn",
@@ -86,8 +111,9 @@ export const translations = {
     },
     activities: {
       title: "Hoạt động",
-      jsClub: "Thành viên cộng đồng Kỹ sư phần mềm Nhật Bản",
-      tiepBuoc: "Tham gia chương trình phát triển sinh viên"
+      jsClub: "Câu lạc bộ kỹ sư phần mềm Nhật Bản, nơi hội tụ những người đam mê lập trình và văn hóa Nhật Bản",
+      tiepBuoc: "Dự án thiện nguyện giúp đỡ trẻ em vùng cao của tỉnh Tuyên Quang",
+      visitPage: "Xem trang"
     },
     references: {
       title: "Người giới thiệu"

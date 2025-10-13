@@ -6,7 +6,7 @@ export const References = ({ t, references }) => {
     <section id="references" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black/30 via-blue-950/30 to-black/30 backdrop-blur-sm relative z-10">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
+          <h2 className="section-title">
             <User className="text-amber-400 drop-shadow-lg" />
             <span className="bg-gradient-to-r from-amber-400 to-cyan-400 bg-clip-text text-transparent">{t.references.title}</span>
           </h2>
