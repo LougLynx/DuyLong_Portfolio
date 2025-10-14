@@ -12,6 +12,7 @@ export const translations = {
     },
     hero: {
       greeting: "Hi, I'm",
+      name: "Long Tran Duy",
       title: ".NET Developer",
       description: "I am a software developer with practical experience in C# programming, gained through real-world projects in manufacturing and system integration. I am now seeking to begin my career path as a .NET Developer, focusing on building web and desktop applications. With a strong technical foundation, problem-solving mindset, and eagerness to learn new technologies, I am ready to contribute and grow within a professional development team.",
       viewWork: "View My Work",
@@ -99,6 +100,7 @@ export const translations = {
     },
     hero: {
       greeting: "Xin chào, tôi là",
+      name: "Trần Duy Long",
       title: "Lập trình viên .NET",
       description: "Tôi là một nhà phát triển phần mềm có kinh nghiệm thực tế trong lập trình C#, đạt được thông qua các dự án thực tế trong sản xuất và tích hợp hệ thống. Hiện tôi đang theo đuổi con đường sự nghiệp với vai trò .NET Developer, tập trung vào việc xây dựng các ứng dụng web và desktop. Với nền tảng kỹ thuật vững chắc, tư duy giải quyết vấn đề và khát khao học hỏi công nghệ mới, tôi sẵn sàng đóng góp và phát triển trong một đội ngũ phát triển chuyên nghiệp.",
       viewWork: "Xem công việc",

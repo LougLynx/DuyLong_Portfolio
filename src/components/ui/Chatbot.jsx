@@ -1,7 +1,7 @@
 import Groq from 'groq-sdk';
 import { Bot, Loader2, MessageCircle, Send, User, X } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
-import { getDetailedContext, getSystemPrompt } from '../../data/chatbotData';
+import { getSystemPrompt } from '../../data/chatbotData';
 
 // Get API key from environment variable
 const API_KEY = import.meta.env.VITE_GROQ_API_KEY;
@@ -21,10 +21,8 @@ export const Chatbot = ({ language }) => {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
   const genAI = useRef(null);
-  const chat = useRef(null);
   const currentLanguage = useRef(language);
   const chatInitialized = useRef(false);
-  const contextSent = useRef(false);
   
   // Rate limiting để tránh vượt quota
   const lastRequestTime = useRef(0);
@@ -54,7 +52,6 @@ export const Chatbot = ({ language }) => {
       // Only reinitialize if language changed or not yet initialized
       if (!chatInitialized.current || currentLanguage.current !== language) {
         currentLanguage.current = language;
-        contextSent.current = false; // Reset context when language changes
         initializeChat();
       }
     }
@@ -176,49 +173,30 @@ export const Chatbot = ({ language }) => {
     requestCount.current += 1;
 
     try {
-      // console.log('📤 Sending message to Gemini:', currentInput);
+      // console.log('📤 Sending message to Groq:', currentInput);
       
-      // Build message with smart context injection
-      let messageToSend = currentInput;
+      // Get comprehensive system prompt with ALL data
+      const systemPrompt = getSystemPrompt(language);
       
-      if (!contextSent.current) {
-        // First message: add base system prompt với context đầy đủ
-        const systemPrompt = getSystemPrompt(language);
-        const detailedContext = getDetailedContext(currentInput, language);
-        messageToSend = `${systemPrompt}\n\nContext: ${detailedContext}\n\nQuestion: ${currentInput}\n\nPlease provide a detailed, comprehensive answer with specific examples.`;
-        contextSent.current = true;
-        // console.log('🎯 First message with enhanced context');
-      } else {
-        // Subsequent messages: thêm context ngắn gọn
-        const briefContext = getDetailedContext(currentInput, language);
-        if (briefContext) {
-          messageToSend = `Context: ${briefContext}\n\nQuestion: ${currentInput}\n\nPlease provide a detailed answer.`;
-        } else {
-          messageToSend = `${currentInput}\n\nPlease provide a detailed, comprehensive answer.`;
-        }
-        // console.log('📚 Question with brief context');
-      }
-      
-      // Use Groq API (non-streaming for now)
+      // Use Groq API with detailed system prompt
       try {
-        // console.log('📤 Sending to Groq:', messageToSend);
+        // console.log('📤 Sending to Groq with full context');
         
         const completion = await genAI.current.chat.completions.create({
           messages: [
             {
               role: "system",
-              content: language === 'vi' 
-                ? "Bạn là Trần Duy Long, sinh viên FPT University chuyên ngành Software Engineering. Trả lời thân thiện, chi tiết và đầy đủ bằng tiếng Việt. Mỗi câu trả lời ít nhất 3-4 câu với ví dụ cụ thể."
-                : "You are Tran Duy Long, a FPT University student majoring in Software Engineering. Answer friendly, detailed and comprehensive in English. Each response should be at least 3-4 sentences with specific examples."
+              content: systemPrompt // Full detailed system prompt with all info
             },
             {
               role: "user",
-              content: messageToSend
+              content: currentInput // Just the question, no extra context needed
             }
           ],
-          model: "llama-3.1-8b-instant", // Updated to use available model
-          temperature: 0.8,
-          max_tokens: 10000
+          model: "llama-3.1-8b-instant",
+          temperature: 0.3, // Lower temperature to reduce creativity/hallucination
+          max_tokens: 1024, // Reasonable limit for answers
+          top_p: 0.9 // More focused responses
         });
 
         const text = completion.choices[0]?.message?.content || '';

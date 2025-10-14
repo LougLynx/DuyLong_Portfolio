@@ -1,7 +1,7 @@
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
-export const Hero = ({ t, scrollToSection }) => {
+export const Hero = ({ t, scrollToSection, language }) => {
   // Typing animation for dynamic roles
   const roles = [
     'Java Developer',
@@ -65,7 +65,7 @@ export const Hero = ({ t, scrollToSection }) => {
                 <div className="relative h-full rounded-[2rem] overflow-hidden border-4 border-slate-900/50 shadow-2xl shadow-cyan-500/30 transform group-hover:scale-[1.02] transition-all duration-500">
                   <img 
                     src="/Asset/avatar.jpg" 
-                    alt="Duy Long Tran - .NET Developer" 
+                    alt={language === 'vi' ? 'Trần Duy Long - .NET Developer' : 'Long Tran Duy - .NET Developer'}
                     className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
                   />
                   
@@ -78,7 +78,7 @@ export const Hero = ({ t, scrollToSection }) => {
                     <div className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                       <div>
-                        <p className="text-white font-bold text-lg">Duy Long Tran</p>
+                        <p className="text-white font-bold text-lg">{t.hero.name}</p>
                         <p className="text-cyan-400 text-sm font-medium tracking-wide">
                           {displayedText}
                           <span className="ml-0.5 inline-block w-[1ch] -translate-y-px border-r-2 border-cyan-400 animate-pulse" aria-hidden="true"></span>
@@ -110,7 +110,7 @@ export const Hero = ({ t, scrollToSection }) => {
             {/* Name */}
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-amber-400 bg-clip-text text-transparent animate-gradient">
-                Duy Long Tran
+               {t.hero.name}
               </span>
             </h1>
             

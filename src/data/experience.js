@@ -33,7 +33,9 @@ export const getExperience = (lang) => [
 
 export const getEducation = (lang) => [
   {
-    degree: "Bachelor of Software Engineering",
+    degree: lang === 'en' 
+      ? "Bachelor of Software Engineering"
+      : "Kỹ thuật Phần mềm",
     institution: "FPT University",
     period: "2022 - 2026",
     details: lang === 'en' 

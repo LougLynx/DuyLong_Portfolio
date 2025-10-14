@@ -22,12 +22,12 @@ export const getProjects = (lang) => [
   {
     title: "Personal Portfolio",
     description: lang === 'en'
-      ? "Built a modern and responsive personal portfolio website to showcase my projects, experience, and skills. Implemented smooth animations, dark/light theme support, bilingual interface (English/Vietnamese), and optimized performance for excellent user experience."
-      : "Xây dựng website portfolio cá nhân hiện đại và responsive để giới thiệu các dự án, kinh nghiệm và kỹ năng của tôi. Triển khai các hiệu ứng mượt mà, hỗ trợ giao diện sáng/tối, song ngữ (Tiếng Anh/Tiếng Việt), và tối ưu hiệu suất để mang lại trải nghiệm người dùng tốt nhất.",
+      ? "Built a modern and responsive personal portfolio website to showcase my projects, experience, and skills. Implemented smooth animations, chatbot support, bilingual interface (English/Vietnamese), and optimized performance for excellent user experience."
+      : "Xây dựng website portfolio cá nhân hiện đại và responsive để giới thiệu các dự án, kinh nghiệm và kỹ năng của tôi. Triển khai các hiệu ứng mượt mà, có Chatbot hỗ trợ, song ngữ (Tiếng Anh/Tiếng Việt), và tối ưu hiệu suất để mang lại trải nghiệm người dùng tốt nhất.",
     technologies: ["React", "Vite", "Tailwind CSS", "JavaScript", "HTML", "CSS"],
     github: "#",
     live: "#",
-    period: "01/2025"
+    period: "10/2025"
   }
   // {
   //   title: "Personal Portfolio",
