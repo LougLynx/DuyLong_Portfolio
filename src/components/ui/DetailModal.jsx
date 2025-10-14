@@ -65,16 +65,16 @@ export const DetailModal = ({ isOpen, onClose, title, subtitle, period, descript
   const goNext = () => setCurrentIndex((idx) => (idx + 1) % images.length);
 
   const modalUi = (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 overflow-y-auto">
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose}></div>
-      <div role="dialog" aria-modal="true" ref={dialogRef} className="relative bg-slate-900/90 backdrop-blur-lg border border-cyan-500/20 rounded-2xl max-w-3xl w-full mx-4 shadow-2xl focus:outline-none" tabIndex={-1}>
+      <div role="dialog" aria-modal="true" ref={dialogRef} className="relative bg-slate-900/90 backdrop-blur-lg border border-cyan-500/20 rounded-2xl max-w-3xl w-full my-8 shadow-2xl focus:outline-none max-h-[90vh] flex flex-col" tabIndex={-1}>
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 px-3 py-1 rounded-md bg-slate-800/80 border border-slate-700 text-sm hover:bg-slate-700/80 transition"
+          className="absolute top-3 right-3 px-3 py-1 rounded-md bg-slate-800/80 border border-slate-700 text-sm hover:bg-slate-700/80 transition z-10"
         >
           ✕
         </button>
-        <div className="p-6 space-y-4">
+        <div className="p-6 space-y-4 overflow-y-auto">
           <div>
             <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-amber-400 bg-clip-text text-transparent">{title}</h3>
             {subtitle && <p className="text-cyan-300/80 font-semibold">{subtitle}</p>}

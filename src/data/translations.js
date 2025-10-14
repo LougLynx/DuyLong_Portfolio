@@ -6,6 +6,7 @@ export const translations = {
       projects: "Projects",
       blog: "Journal",
       education: "Education",
+      certificates: "Certificates",
       activities: "Activities",
       contact: "Contact"
     },
@@ -23,7 +24,9 @@ export const translations = {
       description2: "With a strong technical foundation, problem-solving mindset, and eagerness to learn new technologies, I am committed to delivering high-quality solutions and growing within a professional development team. I believe in continuous learning and staying updated with the latest industry trends."
     },
     experience: {
-      title: "Work Experience"
+      title: "Work Experience",
+      seeMore: "See More",
+      seeLess: "See Less"
     },
     projects: {
       title: "Featured Projects",
@@ -34,6 +37,7 @@ export const translations = {
     },
     blog: {
       title: "Life Journal",
+      subtitle: "Where I share about technology, learning, and interesting life moments",
       readMore: "Read More",
       backToBlog: "Back to Journal",
       postedOn: "Posted on",
@@ -45,14 +49,24 @@ export const translations = {
       title: "Education",
       scholarship: "Scholarship: Awarded a 30% scholarship for all four academic years."
     },
+    certificates: {
+      title: "Certificates",
+      viewCredential: "View Certificate",
+      seeMore: "See More",
+      seeLess: "See Less"
+    },
     activities: {
       title: "Activities",
       jsClub: "A community of Japanese software engineers where programming enthusiasts and Japanese culture lovers gather",
       tiepBuoc: "A charity project helping children in mountainous areas of Tuyen Quang province",
-      visitPage: "Visit Page"
+      visitPage: "Visit Page",
+      seeMore: "See More",
+      seeLess: "See Less"
     },
     references: {
-      title: "References"
+      title: "References",
+      seeMore: "See More",
+      seeLess: "See Less"
     },
     contact: {
       title: "Let's Connect",
@@ -79,6 +93,7 @@ export const translations = {
       projects: "Dự án",
       blog: "Nhật ký",
       education: "Học vấn",
+      certificates: "Chứng chỉ",
       activities: "Hoạt động",
       contact: "Liên hệ"
     },
@@ -96,7 +111,9 @@ export const translations = {
       description2: "Với nền tảng kỹ thuật vững chắc, tư duy giải quyết vấn đề và khao khát học hỏi công nghệ mới, tôi cam kết mang đến các giải pháp chất lượng cao và phát triển trong một đội ngũ phát triển chuyên nghiệp. Tôi tin tưởng vào việc học tập liên tục và cập nhật các xu hướng công nghiệp mới nhất."
     },
     experience: {
-      title: "Kinh nghiệm làm việc"
+      title: "Kinh nghiệm làm việc",
+      seeMore: "Xem thêm",
+      seeLess: "Thu gọn"
     },
     projects: {
       title: "Dự án nổi bật",
@@ -107,6 +124,7 @@ export const translations = {
     },
     blog: {
       title: "Nhật Ký",
+      subtitle: "Nơi chia sẻ về công nghệ, học tập  và những điều thú vị trong cuộc sống",
       readMore: "Đọc thêm",
       backToBlog: "Quay lại Nhật ký",
       postedOn: "Đăng ngày",
@@ -118,14 +136,24 @@ export const translations = {
       title: "Học vấn",
       scholarship: "Học bổng: Được trao học bổng 30% cho tất cả bốn năm học."
     },
+    certificates: {
+      title: "Chứng chỉ",
+      viewCredential: "Xem chứng chỉ",
+      seeMore: "Xem thêm",
+      seeLess: "Thu gọn"
+    },
     activities: {
       title: "Hoạt động",
       jsClub: "Câu lạc bộ kỹ sư phần mềm Nhật Bản, nơi hội tụ những người đam mê lập trình và văn hóa Nhật Bản",
       tiepBuoc: "Dự án thiện nguyện giúp đỡ trẻ em vùng cao của tỉnh Tuyên Quang",
-      visitPage: "Xem trang"
+      visitPage: "Xem trang",
+      seeMore: "Xem thêm",
+      seeLess: "Thu gọn"
     },
     references: {
-      title: "Người giới thiệu"
+      title: "Người giới thiệu",
+      seeMore: "Xem thêm",
+      seeLess: "Thu gọn"
     },
     contact: {
       title: "Kết nối với tôi",

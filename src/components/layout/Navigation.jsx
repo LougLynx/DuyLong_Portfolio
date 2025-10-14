@@ -11,15 +11,16 @@ export const Navigation = ({ t, language, toggleLanguage, scrollToSection }) => 
             className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-amber-400 bg-clip-text text-transparent focus:outline-none"
             style={{ cursor: 'pointer' }}
           >
-            Duy Long Tran
+            {language === 'en' ? 'Long Tran Duy' : 'Trần Duy Long'}
           </button>
           <div className="hidden md:flex space-x-8">
             <button onClick={() => scrollToSection('about')} className="hover:text-cyan-400 transition-all duration-300 hover:scale-110">{t.nav.about}</button>
             <button onClick={() => scrollToSection('experience')} className="hover:text-cyan-400 transition-all duration-300 hover:scale-110">{t.nav.experience}</button>
             <button onClick={() => scrollToSection('projects')} className="hover:text-cyan-400 transition-all duration-300 hover:scale-110">{t.nav.projects}</button>
-            <button onClick={() => scrollToSection('blog')} className="hover:text-cyan-400 transition-all duration-300 hover:scale-110">{t.nav.blog}</button>
             <button onClick={() => scrollToSection('education')} className="hover:text-cyan-400 transition-all duration-300 hover:scale-110">{t.nav.education}</button>
+            <button onClick={() => scrollToSection('certificates')} className="hover:text-purple-400 transition-all duration-300 hover:scale-110">{t.nav.certificates}</button>
             <button onClick={() => scrollToSection('activities')} className="hover:text-cyan-400 transition-all duration-300 hover:scale-110">{t.nav.activities}</button>
+            <button onClick={() => scrollToSection('blog')} className="hover:text-cyan-400 transition-all duration-300 hover:scale-110">{t.nav.blog}</button>
             <button onClick={() => scrollToSection('contact')} className="hover:text-cyan-400 transition-all duration-300 hover:scale-110">{t.nav.contact}</button>
           </div>
           <div className="flex items-center space-x-4">

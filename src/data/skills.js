@@ -1,6 +1,6 @@
 export const skills = [
   // Backend frameworks & languages
-  "ASP.NET", "Spring Boot", "JSP", "Java",
+  "ASP .NET", "Spring Boot", "JSP", "Java",
   // Frontend frameworks & languages
   "React", "Angular", "JavaScript",
   // Database

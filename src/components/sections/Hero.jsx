@@ -138,7 +138,7 @@ export const Hero = ({ t, scrollToSection }) => {
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   {t.hero.viewWork}
-                  <ChevronDown size={20} className="rotate-[-90deg]" />
+                  <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 rotate-[-90deg]" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-400 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
               </button>
@@ -171,10 +171,9 @@ export const Hero = ({ t, scrollToSection }) => {
         </div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="flex justify-center mt-12 animate-bounce">
           <ChevronDown 
-            size={32} 
-            className="text-cyan-400 cursor-pointer hover:text-amber-400 transition-colors" 
+            className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-400 cursor-pointer hover:text-amber-400 transition-colors" 
             onClick={() => scrollToSection('about')}
           />
         </div>

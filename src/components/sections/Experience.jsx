@@ -1,9 +1,31 @@
-import { Briefcase } from 'lucide-react';
-import React, { useState } from 'react';
+import { Briefcase, ChevronDown } from 'lucide-react';
+import React, { useMemo, useState } from 'react';
 import { DetailModal } from '../ui/DetailModal';
 
-export const Experience = ({ t, experience }) => {
+export const Experience = ({ t, experience, scrollToSection }) => {
   const [openItem, setOpenItem] = useState(null);
+  const [expanded, setExpanded] = useState(false);
+
+  const parsePeriodEnd = (period) => {
+    // Try to extract end date from formats like "01/2023 - 06/2024" or "2023 - Present"
+    if (typeof period !== 'string') return new Date(0);
+    const parts = period.split('-').map((p) => p.trim());
+    const end = parts[1] || parts[0];
+    if (/present|nay|hiện/i.test(end)) return new Date(3000, 0, 1); // treat Present as far future
+    if (/\d{2}\/\d{4}/.test(end)) {
+      const [m, y] = end.split('/').map((v) => parseInt(v, 10));
+      return new Date(y, m - 1, 1);
+    }
+    if (/\d{4}/.test(end)) return new Date(parseInt(end, 10), 0, 1);
+    return new Date(0);
+  };
+
+  const sortedExperience = useMemo(() => {
+    if (!Array.isArray(experience)) return [];
+    return [...experience].sort((a, b) => parsePeriodEnd(b.period) - parsePeriodEnd(a.period));
+  }, [experience]);
+
+  const visibleExperience = expanded ? sortedExperience : sortedExperience.slice(0, 3);
   return (
     <section id="experience" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black/30 via-blue-950/30 to-black/30 backdrop-blur-sm relative z-10">
       <div className="max-w-6xl mx-auto">
@@ -15,7 +37,7 @@ export const Experience = ({ t, experience }) => {
           <div className="w-24 h-1.5 bg-gradient-to-r from-amber-500 via-cyan-500 to-blue-500 mx-auto rounded-full shadow-lg shadow-cyan-500/50"></div>
         </div>
         <div className="space-y-8">
-          {experience.map((job, index) => (
+          {visibleExperience.map((job, index) => (
             <button key={index} onClick={() => setOpenItem(job)} className="w-full text-left bg-gradient-to-br from-cyan-500/5 via-blue-500/5 to-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-400/50 transition-all hover:shadow-2xl hover:shadow-cyan-500/10 hover:scale-[1.02] group">
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
@@ -34,6 +56,27 @@ export const Experience = ({ t, experience }) => {
               </ul>
             </button>
           ))}
+        </div>
+        {sortedExperience.length > 3 && (
+          <div className="text-center mt-8">
+            <button
+              onClick={() => setExpanded((prev) => !prev)}
+              className="group relative px-6 py-2 rounded-full border border-cyan-500/30 text-cyan-300 hover:text-white hover:border-cyan-400/60 hover:bg-cyan-500/10 transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+            >
+              <span className="relative z-10 tracking-wide">
+                {(expanded ? t.experience.seeLess : t.experience.seeMore).trim().split(/\s+/).slice(0,2).join(' ')}
+              </span>
+              <span className="pointer-events-none absolute left-6 right-6 -bottom-1 h-0.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-amber-500 opacity-0 scale-x-0 origin-left transition-all duration-300 group-hover:opacity-100 group-hover:scale-x-100"></span>
+            </button>
+          </div>
+        )}
+        
+        {/* Scroll Indicator to Projects */}
+        <div className="flex justify-center mt-8 animate-bounce">
+          <ChevronDown
+            className="w-6 h-6 sm:w-7 sm:h-7 text-cyan-400 cursor-pointer hover:text-amber-400 transition-colors"
+            onClick={() => scrollToSection && scrollToSection('projects')}
+          />
         </div>
       </div>
       <DetailModal

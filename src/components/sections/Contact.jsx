@@ -1,7 +1,7 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
 import React from 'react';
 
-export const Contact = ({ t }) => {
+export const Contact = ({ t, scrollToSection }) => {
   return (
     <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="max-w-4xl mx-auto text-center">

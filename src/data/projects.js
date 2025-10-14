@@ -28,7 +28,7 @@ export const getProjects = (lang) => [
     github: "#",
     live: "#",
     period: "01/2025"
-  },
+  }
   // {
   //   title: "Personal Portfolio",
   //   description: lang === 'en'

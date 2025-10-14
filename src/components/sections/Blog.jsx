@@ -1,14 +1,21 @@
-import { BookOpen, Calendar } from 'lucide-react';
+import { BookOpen, Calendar, ChevronDown } from 'lucide-react';
 import React, { useState } from 'react';
 import { DetailModal } from '../ui/DetailModal';
 
-export const Blog = ({ t, blogs }) => {
+export const Blog = ({ t, blogs, scrollToSection, language }) => {
   const [selectedBlog, setSelectedBlog] = useState(null);
   const [showAll, setShowAll] = useState(false);
 
+  // Ensure the toggle label only shows the first two words (e.g., "See more")
+  const getTwoWordLabel = (label) => {
+    if (typeof label !== 'string') return '';
+    return label.trim().split(/\s+/).slice(0, 2).join(' ');
+  };
+
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
+    const locale = language === 'en' ? 'en-US' : 'vi-VN';
+    return new Date(dateString).toLocaleDateString(locale, options);
   };
 
   // Sort blogs by date (most recent first) and limit to 3 if showAll is false
@@ -38,6 +45,11 @@ export const Blog = ({ t, blogs }) => {
             <h2 className="section-title">
               <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-amber-400 bg-clip-text text-transparent leading-[1.1] md:leading-[1.1]">{t.blog.title}</span>
             </h2>
+            {t.blog.subtitle && (
+              <p className="mt-2 text-sm text-gray-300">
+                {t.blog.subtitle}
+              </p>
+            )}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -90,12 +102,24 @@ export const Blog = ({ t, blogs }) => {
             <div className="mt-12 text-center">
               <button
                 onClick={() => setShowAll(!showAll)}
-                className="px-8 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-lg hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:scale-105 font-medium"
+                className="group relative px-6 py-2 rounded-full border border-cyan-500/30 text-cyan-300 hover:text-white hover:border-cyan-400/60 hover:bg-cyan-500/10 transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
               >
-                {showAll ? t.blog.seeLess : t.blog.seeMore} {showAll ? '↑' : '↓'}
+                <span className="relative z-10 tracking-wide">
+                  {showAll ? getTwoWordLabel(t.blog.seeLess) : getTwoWordLabel(t.blog.seeMore)}
+                </span>
+                {/* animated underline for better UX */}
+                <span className="pointer-events-none absolute left-6 right-6 -bottom-1 h-0.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-amber-500 opacity-0 scale-x-0 origin-left transition-all duration-300 group-hover:opacity-100 group-hover:scale-x-100"></span>
               </button>
             </div>
           )}
+        
+        {/* Scroll Indicator to References */}
+        <div className="flex justify-center mt-8 animate-bounce">
+          <ChevronDown
+            className="w-6 h-6 sm:w-7 sm:h-7 text-cyan-400 cursor-pointer hover:text-amber-400 transition-colors"
+            onClick={() => scrollToSection && scrollToSection('references')}
+          />
+        </div>
         </div>
       </section>
 

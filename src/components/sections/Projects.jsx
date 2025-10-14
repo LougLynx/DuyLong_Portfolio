@@ -1,11 +1,34 @@
-import { Code, ExternalLink, Github } from 'lucide-react';
-import React, { useState } from 'react';
+import { ChevronDown, Code, ExternalLink, Github } from 'lucide-react';
+import React, { useMemo, useState } from 'react';
 
-export const Projects = ({ t, projects }) => {
+export const Projects = ({ t, projects, scrollToSection }) => {
   const [showAll, setShowAll] = useState(false);
 
+  // Ensure the toggle label only shows the first two words (e.g., "See more")
+  const getTwoWordLabel = (label) => {
+    if (typeof label !== 'string') return '';
+    return label.trim().split(/\s+/).slice(0, 2).join(' ');
+  };
+
+  const parsePeriodEnd = (period) => {
+    if (typeof period !== 'string') return new Date(0);
+    const parts = period.split('-').map((p) => p.trim());
+    const end = parts[1] || parts[0];
+    if (/\d{2}\/\d{4}/.test(end)) {
+      const [m, y] = end.split('/').map((v) => parseInt(v, 10));
+      return new Date(y, m - 1, 1);
+    }
+    if (/\d{4}/.test(end)) return new Date(parseInt(end, 10), 0, 1);
+    return new Date(0);
+  };
+
+  const sortedProjects = useMemo(() => {
+    if (!Array.isArray(projects)) return [];
+    return [...projects].sort((a, b) => parsePeriodEnd(b.period) - parsePeriodEnd(a.period));
+  }, [projects]);
+
   // Limit to 3 projects initially if showAll is false
-  const displayedProjects = showAll ? projects : projects.slice(0, 3);
+  const displayedProjects = showAll ? sortedProjects : sortedProjects.slice(0, 3);
 
   return (
     <section id="projects" className="py-16 px-4 sm:px-6 lg:px-8 relative z-10">
@@ -62,12 +85,24 @@ export const Projects = ({ t, projects }) => {
           <div className="mt-12 text-center">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="px-8 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-lg hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:scale-105 font-medium"
+              className="group relative px-6 py-2 rounded-full border border-cyan-500/30 text-cyan-300 hover:text-white hover:border-cyan-400/60 hover:bg-cyan-500/10 transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
             >
-              {showAll ? t.projects.seeLess : t.projects.seeMore} {showAll ? '↑' : '↓'}
+              <span className="relative z-10 tracking-wide">
+                {showAll ? getTwoWordLabel(t.projects.seeLess) : getTwoWordLabel(t.projects.seeMore)}
+              </span>
+              {/* animated underline for better UX */}
+              <span className="pointer-events-none absolute left-6 right-6 -bottom-1 h-0.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-amber-500 opacity-0 scale-x-0 origin-left transition-all duration-300 group-hover:opacity-100 group-hover:scale-x-100"></span>
             </button>
           </div>
         )}
+        
+        {/* Scroll Indicator to Education */}
+        <div className="flex justify-center mt-8 animate-bounce">
+          <ChevronDown
+            className="w-6 h-6 sm:w-7 sm:h-7 text-cyan-400 cursor-pointer hover:text-amber-400 transition-colors"
+            onClick={() => scrollToSection && scrollToSection('education')}
+          />
+        </div>
       </div>
     </section>
   );

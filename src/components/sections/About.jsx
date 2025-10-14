@@ -1,8 +1,8 @@
-import { GraduationCap } from 'lucide-react';
+import { ChevronDown, GraduationCap } from 'lucide-react';
 import React from 'react';
 import { skills } from '../../data/skills';
 
-export const About = ({ t }) => {
+export const About = ({ t, scrollToSection }) => {
   return (
     <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="max-w-6xl mx-auto">
@@ -87,6 +87,14 @@ export const About = ({ t }) => {
               ))}
             </div>
           </div>
+        </div>
+        
+        {/* Scroll Indicator to Experience */}
+        <div className="flex justify-center mt-8 animate-bounce">
+          <ChevronDown
+            className="w-6 h-6 sm:w-7 sm:h-7 text-cyan-400 cursor-pointer hover:text-amber-400 transition-colors"
+            onClick={() => scrollToSection && scrollToSection('experience')}
+          />
         </div>
       </div>
     </section>
