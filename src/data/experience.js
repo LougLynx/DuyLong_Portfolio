@@ -25,8 +25,8 @@ export const getExperience = (lang) => [
       '/Asset/Work/Denso/kiniem.jpg',
       '/Asset/Work/Denso/InnovationTeam.jpg',
       '/Asset/Work/Denso/3anhem.jpg',
-      '/Asset/Work/Denso/dinhau.jpg',
-      '/Asset/Work/Denso/RIG.jpg',
+      '/Asset/Work/Denso/dinhau.JPG',
+      '/Asset/Work/Denso/RIG.JPG',
     ]
   }
 ];

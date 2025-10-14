@@ -11,6 +11,7 @@ import { Hero } from './components/sections/Hero';
 import { Projects } from './components/sections/Projects';
 import { References } from './components/sections/References';
 import { AnimatedBackground } from './components/ui/AnimatedBackground';
+import { Chatbot } from './components/ui/Chatbot';
 import { FloatingCodes } from './components/ui/FloatingCodes';
 import { getBlogs } from './data/blogs';
 import { getActivities, getEducation, getExperience, references } from './data/experience';
@@ -77,6 +78,9 @@ const App = () => {
 
       {/* Footer */}
       <Footer t={t} />
+
+      {/* AI Chatbot */}
+      <Chatbot language={language} />
     </div>
   );
 };

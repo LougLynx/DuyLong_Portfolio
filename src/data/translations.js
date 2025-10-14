@@ -59,6 +59,15 @@ export const translations = {
       description: "Interested in working together or have a project in mind? Feel free to reach out!",
       email: "Email Me"
     },
+    chatbot: {
+      title: "AI Assistant",
+      subtitle: "Ask me anything",
+      placeholder: "Type your question...",
+      online: "Online",
+      suggestedQuestions: "Suggested questions:",
+      openChat: "Open chatbot",
+      closeChat: "Close chatbot"
+    },
     footer: {
       rights: "All rights reserved."
     }
@@ -122,6 +131,15 @@ export const translations = {
       title: "Kết nối với tôi",
       description: "Quan tâm đến việc cùng làm việc hoặc có ý tưởng dự án? Hãy liên hệ ngay!",
       email: "Gửi Email"
+    },
+    chatbot: {
+      title: "Trợ lý AI",
+      subtitle: "Hỏi tôi bất cứ điều gì",
+      placeholder: "Nhập câu hỏi của bạn...",
+      online: "Đang hoạt động",
+      suggestedQuestions: "Câu hỏi gợi ý:",
+      openChat: "Mở chatbot",
+      closeChat: "Đóng chatbot"
     },
     footer: {
       rights: "Bảo lưu mọi quyền."

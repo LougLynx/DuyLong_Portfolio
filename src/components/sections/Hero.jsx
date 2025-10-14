@@ -64,7 +64,7 @@ export const Hero = ({ t, scrollToSection }) => {
                 {/* Image Frame */}
                 <div className="relative h-full rounded-[2rem] overflow-hidden border-4 border-slate-900/50 shadow-2xl shadow-cyan-500/30 transform group-hover:scale-[1.02] transition-all duration-500">
                   <img 
-                    src="./Asset/avatar.jpg" 
+                    src="/Asset/avatar.jpg" 
                     alt="Duy Long Tran - .NET Developer" 
                     className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
                   />
