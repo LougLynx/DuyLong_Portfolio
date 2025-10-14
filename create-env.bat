@@ -1,11 +1,23 @@
 @echo off
-echo Creating .env file...
-echo VITE_GEMINI_API_KEY=AIzaSyAb24n5oe__hEtNQD9yPc0NxoOWVz9AsvU > .env
+chcp 65001 >nul
+echo ========================================
+echo  TẠO FILE .ENV VỚI GROQ API KEY
+echo ========================================
 echo.
-echo ✅ File .env created successfully!
+echo Hướng dẫn lấy Groq API key MIỄN PHÍ:
+echo 1. Mở: https://console.groq.com/keys
+echo 2. Đăng ký/Đăng nhập tài khoản
+echo 3. Click "Create API Key"
+echo 4. Copy API key
 echo.
-echo File location: %CD%\.env
+set /p apikey="Nhập Groq API key của bạn: "
 echo.
-echo Now you can run: npm run dev
+echo Đang tạo file .env...
+echo VITE_GROQ_API_KEY=%apikey%> .env
+echo.
+echo ✅ File .env đã được tạo thành công!
+echo.
+echo Bây giờ hãy chạy: npm run dev
+echo.
 pause
 
