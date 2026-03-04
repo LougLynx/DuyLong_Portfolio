@@ -4,7 +4,6 @@ export const translations = {
       about: "About",
       experience: "Experience",
       projects: "Projects",
-      blog: "Journal",
       education: "Education",
       certificates: "Certificates",
       activities: "Activities",
@@ -34,16 +33,6 @@ export const translations = {
       code: "Code",
       liveDemo: "Link Docs",
       seeMore: "See More Projects",
-      seeLess: "See Less"
-    },
-    blog: {
-      title: "Life Journal",
-      subtitle: "Where I share about technology, learning, and interesting life moments",
-      readMore: "Read More",
-      backToBlog: "Back to Journal",
-      postedOn: "Posted on",
-      tags: "Tags",
-      seeMore: "See More Blogs",
       seeLess: "See Less"
     },
     education: {
@@ -92,7 +81,6 @@ export const translations = {
       about: "Giới thiệu",
       experience: "Kinh nghiệm",
       projects: "Dự án",
-      blog: "Nhật ký",
       education: "Học vấn",
       certificates: "Chứng chỉ",
       activities: "Hoạt động",
@@ -122,16 +110,6 @@ export const translations = {
       code: "Mã nguồn",
       liveDemo: "Link Tài liệu",
       seeMore: "Xem thêm dự án",
-      seeLess: "Thu gọn"
-    },
-    blog: {
-      title: "Nhật Ký",
-      subtitle: "Nơi chia sẻ về công nghệ, học tập  và những điều thú vị trong cuộc sống",
-      readMore: "Đọc thêm",
-      backToBlog: "Quay lại Nhật ký",
-      postedOn: "Đăng ngày",
-      tags: "Thẻ",
-      seeMore: "Xem thêm bài viết",
       seeLess: "Thu gọn"
     },
     education: {
