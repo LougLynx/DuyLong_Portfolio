@@ -26,13 +26,13 @@ export const Activities = ({ t, activities, scrollToSection }) => {
         <div className="text-center mb-12">
           <h2 className="section-title">
             <User className="text-cyan-400 drop-shadow-lg" />
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">{t.activities.title}</span>
+            <span className="text-cyan-400">{t.activities.title}</span>
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-amber-500 mx-auto rounded-full shadow-lg shadow-cyan-500/50"></div>
+          <div className="w-24 h-1.5 bg-cyan-500 mx-auto rounded-full shadow-lg shadow-cyan-500/50"></div>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {visibleActivities.map((activity, index) => (
-            <button key={index} onClick={() => setOpenItem(activity)} className="text-left bg-gradient-to-br from-cyan-500/5 via-blue-500/10 to-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-400/50 transition-all hover:shadow-2xl hover:shadow-cyan-500/20 hover:scale-105 group">
+            <button key={index} onClick={() => setOpenItem(activity)} className="text-left bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-400/50 transition-all hover:shadow-2xl hover:shadow-cyan-500/20 hover:scale-105 group">
               <div className="flex justify-between items-start mb-3">
                 <h3 className="text-xl font-bold group-hover:text-cyan-400 transition-colors">{activity.name}</h3>
                 <span className="text-gray-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20 text-sm">{activity.date}</span>
@@ -50,7 +50,7 @@ export const Activities = ({ t, activities, scrollToSection }) => {
               <span className="relative z-10 tracking-wide">
                 {(expanded ? t.activities.seeLess : t.activities.seeMore).trim().split(/\s+/).slice(0,2).join(' ')}
               </span>
-              <span className="pointer-events-none absolute left-6 right-6 -bottom-1 h-0.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-amber-500 opacity-0 scale-x-0 origin-left transition-all duration-300 group-hover:opacity-100 group-hover:scale-x-100"></span>
+              <span className="pointer-events-none absolute left-6 right-6 -bottom-1 h-0.5 bg-cyan-500 opacity-0 scale-x-0 origin-left transition-all duration-300 group-hover:opacity-100 group-hover:scale-x-100"></span>
             </button>
           </div>
         )}

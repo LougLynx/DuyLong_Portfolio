@@ -36,19 +36,19 @@ export const Projects = ({ t, projects, scrollToSection }) => {
         <div className="text-center mb-12">
           <h2 className="section-title">
             <Code className="text-cyan-400 drop-shadow-lg" />
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">{t.projects.title}</span>
+            <span className="text-cyan-400">{t.projects.title}</span>
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-amber-500 mx-auto rounded-full shadow-lg shadow-cyan-500/50"></div>
+          <div className="w-24 h-1.5 bg-cyan-500 mx-auto rounded-full shadow-lg shadow-cyan-500/50"></div>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedProjects.map((project, index) => (
-            <div key={index} className="group bg-gradient-to-br from-cyan-500/5 via-blue-500/10 to-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-400/50 transition-all hover:shadow-2xl hover:shadow-cyan-500/20 hover:transform hover:scale-105">
-              <h3 className="text-xl font-bold mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-amber-400 group-hover:bg-clip-text transition-all">{project.title}</h3>
+            <div key={index} className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-400/50 transition-all hover:shadow-2xl hover:shadow-cyan-500/20 hover:transform hover:scale-105">
+              <h3 className="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-all">{project.title}</h3>
               <p className="text-gray-300 mb-4 leading-relaxed">{project.description}</p>
               <div className="mb-4">
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
-                    <span key={techIndex} className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 px-3 py-1 rounded-full text-sm border border-cyan-500/30 hover:border-cyan-400/50 hover:from-cyan-500/30 hover:to-blue-500/30 transition-all">
+                    <span key={techIndex} className="bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full text-sm border border-cyan-500/30 hover:border-cyan-400/50 hover:bg-cyan-500/30 transition-all">
                       {tech}
                     </span>
                   ))}
@@ -91,7 +91,7 @@ export const Projects = ({ t, projects, scrollToSection }) => {
                 {showAll ? getTwoWordLabel(t.projects.seeLess) : getTwoWordLabel(t.projects.seeMore)}
               </span>
               {/* animated underline for better UX */}
-              <span className="pointer-events-none absolute left-6 right-6 -bottom-1 h-0.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-amber-500 opacity-0 scale-x-0 origin-left transition-all duration-300 group-hover:opacity-100 group-hover:scale-x-100"></span>
+              <span className="pointer-events-none absolute left-6 right-6 -bottom-1 h-0.5 bg-cyan-500 opacity-0 scale-x-0 origin-left transition-all duration-300 group-hover:opacity-100 group-hover:scale-x-100"></span>
             </button>
           </div>
         )}

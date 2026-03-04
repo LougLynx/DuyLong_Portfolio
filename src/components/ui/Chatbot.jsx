@@ -71,8 +71,8 @@ export const Chatbot = ({ language }) => {
           {
             role: 'bot',
             content: language === 'vi'
-              ? "Chào bạn! Tôi là Duy Long. Hãy hỏi tôi bất cứ điều gì về kinh nghiệm, kỹ năng, dự án hay lý do tôi chọn nghề lập trình nhé!"
-              : "Hello! I'm Duy Long. Ask me anything about my experience, skills, projects, or why I chose programming!",
+              ? "Chào bạn! Tôi là Duy Long. Hãy hỏi tôi bất cứ điều gì về kinh nghiệm phân tích kinh doanh, kỹ năng, dự án hay lý do tôi chọn nghề Business Analyst nhé!"
+              : "Hello! I'm Duy Long. Ask me anything about my business analysis experience, skills, projects, or why I chose to be a Business Analyst!",
             timestamp: new Date()
           }
         ]);
@@ -256,15 +256,9 @@ export const Chatbot = ({ language }) => {
   };
 
   const suggestedQuestions = language === 'vi' ? [
-    "Bạn có kinh nghiệm gì với React?",
-    "Tại sao bạn chọn nghề lập trình?",
-    "Kể về dự án nổi bật nhất của bạn",
-    "Bạn có kỹ năng gì về .NET?"
+    "Tại sao bạn chọn nghề Business Analyst?",
   ] : [
-    "What experience do you have with React?",
-    "Why did you choose programming?",
-    "Tell me about your most notable project",
-    "What are your .NET skills?"
+    "Why did you choose Business Analyst?",
   ];
 
   const handleSuggestedQuestion = (question) => {
@@ -280,7 +274,7 @@ export const Chatbot = ({ language }) => {
       {/* Floating Chat Button */}
       <button
         onClick={toggleChat}
-        className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-full shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-110 group"
+        className="fixed bottom-6 right-6 z-50 bg-blue-600 text-white p-4 rounded-full shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-110 group"
         aria-label={language === 'vi' ? 'Mở chatbot' : 'Open chatbot'}
       >
         {isOpen ? (
@@ -297,7 +291,7 @@ export const Chatbot = ({ language }) => {
       {isOpen && (
         <div className="fixed bottom-24 right-6 z-50 w-[380px] h-[600px] bg-slate-900/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-slate-700/50 flex flex-col overflow-hidden">
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 flex items-center gap-3">
+          <div className="bg-blue-600 p-4 flex items-center gap-3">
             <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
               <Bot className="w-6 h-6 text-white" />
             </div>
@@ -323,14 +317,14 @@ export const Chatbot = ({ language }) => {
                 className={`flex gap-2 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 {message.role === 'bot' && (
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                     <Bot className="w-4 h-4 text-white" />
                   </div>
                 )}
                 <div
                   className={`max-w-[75%] p-3 rounded-2xl ${
                     message.role === 'user'
-                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-br-none'
+                      ? 'bg-blue-600 text-white rounded-br-none'
                       : 'bg-slate-800/80 text-slate-100 rounded-bl-none border border-slate-700/50'
                   }`}
                 >
@@ -351,7 +345,7 @@ export const Chatbot = ({ language }) => {
             ))}
             {isLoading && (
               <div className="flex gap-2 justify-start">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
                   <Bot className="w-4 h-4 text-white" />
                 </div>
                 <div className="bg-slate-800/80 p-3 rounded-2xl rounded-bl-none border border-slate-700/50">
@@ -385,7 +379,7 @@ export const Chatbot = ({ language }) => {
                 </p>
                 <a
                   href="mailto:longtd204@gmail.com"
-                  className="text-xs bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1.5 rounded-full transition-all hover:shadow-lg hover:shadow-blue-500/50 inline-block"
+                  className="text-xs bg-blue-600 text-white px-3 py-1.5 rounded-full transition-all hover:shadow-lg hover:shadow-blue-500/50 inline-block"
                 >
                   📧 longtd204@gmail.com
                 </a>
@@ -407,7 +401,7 @@ export const Chatbot = ({ language }) => {
               <button
                 type="submit"
                 disabled={isLoading || !inputMessage.trim()}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-2 rounded-xl hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-blue-600 text-white p-2 rounded-xl hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Send className="w-5 h-5" />
               </button>

@@ -12,17 +12,17 @@ export const translations = {
     },
     hero: {
       greeting: "Hi, I'm",
-      name: "Long Tran Duy",
-      title: ".NET Developer",
-      description: "I am a software developer with practical experience in C# programming, gained through real-world projects in manufacturing and system integration. I am now seeking to begin my career path as a .NET Developer, focusing on building web and desktop applications. With a strong technical foundation, problem-solving mindset, and eagerness to learn new technologies, I am ready to contribute and grow within a professional development team.",
+      name: "Duy Long Tran",
+      title: "Business Analyst",
+      description: "I am a Business Analyst with practical experience in requirements analysis, process optimization, and stakeholder management, gained through real-world projects in manufacturing and system integration. With a strong analytical mindset, technical understanding, and excellent communication skills, I bridge the gap between business needs and technical solutions. I am seeking to begin my career as a Business Analyst, helping organizations optimize processes and achieve their strategic goals.",
       viewWork: "View My Work",
       getInTouch: "Get In Touch"
     },
     about: {
       title: "About Me",
-      skills: "Technical Skills",
-      description1: "I am a software developer with practical experience in C# programming, gained through real-world projects in manufacturing and system integration. Currently pursuing my career as a .NET Developer, I focus on building robust web and desktop applications that solve real business problems.",
-      description2: "With a strong technical foundation, problem-solving mindset, and eagerness to learn new technologies, I am committed to delivering high-quality solutions and growing within a professional development team. I believe in continuous learning and staying updated with the latest industry trends."
+      skills: "Core Competencies",
+      description1: "I am a Business Analyst with practical experience in requirements analysis, process optimization, and stakeholder management, gained through real-world projects in manufacturing and system integration. I excel at translating business needs into actionable technical requirements and facilitating communication between business stakeholders and technical teams.",
+      description2: "With strong analytical skills, technical understanding, and excellent communication abilities, I am committed to helping organizations optimize their processes and achieve strategic objectives. I believe in data-driven decision making and continuous improvement, always seeking opportunities to add value through thorough analysis and innovative solutions."
     },
     experience: {
       title: "Work Experience",
@@ -32,7 +32,7 @@ export const translations = {
     projects: {
       title: "Featured Projects",
       code: "Code",
-      liveDemo: "Live Demo",
+      liveDemo: "Link Docs",
       seeMore: "See More Projects",
       seeLess: "See Less"
     },
@@ -101,16 +101,16 @@ export const translations = {
     hero: {
       greeting: "Xin chào, tôi là",
       name: "Trần Duy Long",
-      title: "Lập trình viên .NET",
-      description: "Tôi là một nhà phát triển phần mềm có kinh nghiệm thực tế trong lập trình C#, đạt được thông qua các dự án thực tế trong sản xuất và tích hợp hệ thống. Hiện tôi đang theo đuổi con đường sự nghiệp với vai trò .NET Developer, tập trung vào việc xây dựng các ứng dụng web và desktop. Với nền tảng kỹ thuật vững chắc, tư duy giải quyết vấn đề và khát khao học hỏi công nghệ mới, tôi sẵn sàng đóng góp và phát triển trong một đội ngũ phát triển chuyên nghiệp.",
+      title: "Chuyên viên Phân tích Kinh doanh",
+      description: "Tôi là một Chuyên viên Phân tích Kinh doanh có kinh nghiệm thực tế trong phân tích yêu cầu, tối ưu hóa quy trình và quản lý các bên liên quan, đạt được thông qua các dự án thực tế trong sản xuất và tích hợp hệ thống. Với tư duy phân tích mạnh mẽ, hiểu biết kỹ thuật và kỹ năng giao tiếp xuất sắc, tôi kết nối nhu cầu kinh doanh với giải pháp kỹ thuật. Tôi đang tìm kiếm cơ hội bắt đầu sự nghiệp với vai trò Business Analyst, giúp tổ chức tối ưu hóa quy trình và đạt được mục tiêu chiến lược.",
       viewWork: "Xem công việc",
       getInTouch: "Liên hệ ngay"
     },
     about: {
       title: "Giới thiệu",
-      skills: "Kỹ năng kỹ thuật",
-      description1: "Tôi là một nhà phát triển phần mềm có kinh nghiệm thực tế trong lập trình C#, đạt được thông qua các dự án thực tế trong sản xuất và tích hợp hệ thống. Hiện tại, tôi đang theo đuổi sự nghiệp với vai trò .NET Developer, tập trung vào việc xây dựng các ứng dụng web và desktop mạnh mẽ giải quyết các vấn đề kinh doanh thực tế.",
-      description2: "Với nền tảng kỹ thuật vững chắc, tư duy giải quyết vấn đề và khao khát học hỏi công nghệ mới, tôi cam kết mang đến các giải pháp chất lượng cao và phát triển trong một đội ngũ phát triển chuyên nghiệp. Tôi tin tưởng vào việc học tập liên tục và cập nhật các xu hướng công nghiệp mới nhất."
+      skills: "Năng lực cốt lõi",
+      description1: "Tôi là một Chuyên viên Phân tích Kinh doanh có kinh nghiệm thực tế trong phân tích yêu cầu, tối ưu hóa quy trình và quản lý các bên liên quan, đạt được thông qua các dự án thực tế trong sản xuất và tích hợp hệ thống. Tôi xuất sắc trong việc chuyển đổi nhu cầu kinh doanh thành yêu cầu kỹ thuật khả thi và làm cầu nối giữa các bên liên quan kinh doanh và nhóm kỹ thuật.",
+      description2: "Với kỹ năng phân tích mạnh mẽ, hiểu biết kỹ thuật và khả năng giao tiếp xuất sắc, tôi cam kết giúp tổ chức tối ưu hóa quy trình và đạt được mục tiêu chiến lược. Tôi tin tưởng vào việc ra quyết định dựa trên dữ liệu và cải tiến liên tục, luôn tìm kiếm cơ hội tạo giá trị thông qua phân tích kỹ lưỡng và giải pháp sáng tạo."
     },
     experience: {
       title: "Kinh nghiệm làm việc",
@@ -120,7 +120,7 @@ export const translations = {
     projects: {
       title: "Dự án nổi bật",
       code: "Mã nguồn",
-      liveDemo: "Demo trực tiếp",
+      liveDemo: "Link Tài liệu",
       seeMore: "Xem thêm dự án",
       seeLess: "Thu gọn"
     },

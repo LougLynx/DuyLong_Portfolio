@@ -2,9 +2,10 @@
 export const chatbotContext = {
   personalInfo: {
     name: "Trần Duy Long",
-    title: ".NET Developer",
+    title: "Business Analyst",
     email: "longtd204@gmail.com",
     address: "Hà Nội, Việt Nam",
+    hometown: "Yên Khánh, Ninh Bình",
     birthDate: "17/01/2004",
     zodiacSign: "Capricorn (Ma Kết)",
     gender: "Male",
@@ -21,64 +22,66 @@ export const chatbotContext = {
   
   experience: {
     current: {
-      position: "Internship at Innovation - Production Control Division",
+      position: "Business Analyst Internship - Production Control Division, Innovation Department",
       company: "DENSO Manufacturing Vietnam (DMVN)",
       period: "April 2025 - September 2025",
       responsibilities: [
-        "Participated in DX project, managing import/export progress at DMVN warehouse",
-        "Contributed to expanding the FIFO Part Warehouse project, supporting system integration across the corporation",
-        "Designed C# efficient, reusable, and reliable code for production system managing warehouse import/export data",
-        "Gained expertise in connecting and managing data with DMVN inner/global system (Nexus/Imex Control/FIFO)",
-        "Collaborated closely with team members and managers, improving communication skills and teamwork"
+        "Analyzed and documented business requirements for the import/export progress management system at DMVN warehouse",
+        "Conducted requirement analysis for the FIFO Part Warehouse project, focusing on optimizing workflows and ensuring seamless system integration across the corporation",
+        "Collaborated with stakeholders to gather requirements and translate business needs into technical specifications",
+        "Designed solution and UX designs for warehouse data visualization system, ensuring warehouse data is presented intuitively for decision-making",
+        "Facilitated system integration with DMVN's internal and global systems (Nexus, Imex Control, FIFO)",
+        "Worked closely with team members and managers to transform business pain points into technical solutions, ensuring the final product met operational goals"
       ],
-      skills_gained: ["C#", "System Integration", "Database Management", "UI/UX Design", "Workflow Optimization", "Team Collaboration"]
+      skills_gained: ["Requirements Analysis", "Stakeholder Management", "Business Process Modeling", "System Integration", "Data Visualization", "Solution Design", "Communication", "Team Collaboration"]
     }
   },
 
   technicalSkills: {
-    backend: ["ASP.NET", "Spring Boot", "JSP", "Java", "C#"],
-    frontend: ["React", "Angular", "JavaScript", "HTML", "CSS"],
-    database: ["SQL Server", "MySQL"],
-    api: ["RESTful API"],
-    styling: ["Tailwind CSS", "Bootstrap"],
-    tools: ["Git", "Visual Studio", "JetBrains IDEs"],
-    other: ["AJAX", "Vite"]
+    businessAnalysis: ["Requirements Gathering", "Business Process Modeling", "User Story Writing", "Stakeholder Management"],
+    dataAnalysis: ["SQL Server", "MySQL", "Data Analysis", "Reporting"],
+    documentation: ["Process Flow Diagrams", "Use Case Diagrams", "Functional Specifications", "UML Modeling"],
+    methodologies: ["Agile/Scrum", "Waterfall", "SDLC"],
+    tools: ["JIRA", "Confluence", "MS Office", "Visio"],
+    technical: ["RESTful API", "System Integration", "UI/UX Principles"],
+    softSkills: ["Communication", "Problem Solving", "Critical Thinking"]
   },
 
   projects: [
     {
-      name: "Online Shopping",
+      name: "Learning Management System",
+      period: "October 2025 - November 2025",
+      description: "Defined and documented system Use Cases and Data Requirements to ensure full coverage of business logic",
+      technologies: ["Requirements Analysis", "Use Case Modeling", "UML Diagrams", "Sequence Diagrams", "Database Design"],
+      contributions: [
+        "Designed Use Case and Sequence Diagrams",
+        "Created basic database schema",
+        "Applied UML Modeling (Use Case, Sequence)",
+        "Performed Requirement Elicitation and Data Specification"
+      ]
+    },
+    {
+      name: "Online Shopping Platform",
       period: "January 2025 - April 2025",
-      description: "Collaborated with a team of 5 to design user interfaces and optimize user experience",
-      technologies: ["C#", ".NET", "HTML", "CSS", "Bootstrap", "JavaScript", "SQL Server", "RESTful API"],
+      description: "Led requirements gathering and analysis for an e-commerce platform with a team of 5",
+      technologies: ["Use Case Modeling", "Mockup & UI Design", "Database Design", "User Flow Documentation"],
       contributions: [
-        "Designed payment voucher screens",
-        "Contributed to database design and CRUD operations",
-        "Implemented Google Maps integration for delivery tracking"
+        "Defined and documented core user flows for cart, checkout, and payment voucher systems",
+        "Designed wireframes and high-fidelity mockups to optimize user experience",
+        "Developed logical data schemas for products, users, and transactions",
+        "Facilitated communication between business and technical teams"
       ]
     },
     {
-      name: "Jewelry Shop",
-      period: "October 2024 - December 2024",
-      description: "Developed a jewelry e-commerce website with responsive design",
-      technologies: ["JSP", "Java Servlet", "MS SQL", "JavaScript", "HTML", "CSS", "Bootstrap", "AJAX"],
-      contributions: [
-        "Built responsive design using Bootstrap",
-        "Optimized performance with AJAX",
-        "Developed backend with JSP & Servlet",
-        "Integrated shopping cart, payment, and order management"
-      ]
-    },
-    {
-      name: "Personal Portfolio",
+      name: "Personal Portfolio - UX Analysis",
       period: "October 2025",
-      description: "Built a modern and responsive personal portfolio website",
-      technologies: ["React", "Vite", "Tailwind CSS", "JavaScript"],
+      description: "Conducted user research and competitive analysis to design an optimal portfolio experience",
+      technologies: ["User Research", "Requirements Definition", "UX Analysis", "Wireframing", "Technical Documentation"],
       contributions: [
-        "Implemented smooth animations",
-        "Added dark/light theme support",
-        "Created bilingual interface (English/Vietnamese)",
-        "Optimized performance for excellent user experience"
+        "Created user personas and user journey maps",
+        "Defined functional and non-functional requirements",
+        "Documented technical specifications",
+        "Collaborated with development to ensure requirements were met"
       ]
     }
   ],
@@ -99,6 +102,13 @@ export const chatbotContext = {
   ],
 
   certificates: [
+    {
+      title: "User Experience Research and Design",
+      issuer: "Coursera",
+      date: "March 2026",
+      credentialId: "c3595a8dc5a3ae77f1dc52cfbbc4fd56",
+      skills: ["User Experience (UX) Research", "User Interface (UI) Design", "Wireframing", "Prototyping", "Usability Testing", "User Personas", "User Journey Mapping", "Information Architecture", "Design Thinking"]
+    },
     {
       title: "Project Management Principles and Practices",
       issuer: "Coursera",
@@ -143,30 +153,30 @@ export const chatbotContext = {
     }
   ],
 
-  whyProgramming: {
+  whyBusinessAnalysis: {
     reasons: [
-      "Passion for problem-solving and creating solutions that make a real impact",
-      "Fascination with technology and how it can transform businesses and lives",
-      "Enjoy the continuous learning aspect of software development",
-      "Love building things from scratch and seeing ideas come to life through code",
-      "Appreciation for the logical thinking and creativity required in programming"
+      "Passion for bridging the gap between business needs and technical solutions",
+      "Fascination with understanding business processes and optimizing them for efficiency",
+      "Enjoy analyzing complex problems and translating them into actionable requirements",
+      "Love working with stakeholders to understand their needs and deliver value",
+      "Appreciation for the analytical thinking and communication skills required in business analysis"
     ],
-    journey: "Started my programming journey at FPT University in 2022. Through hands-on projects and my internship at DENSO, I discovered my passion for creating efficient, user-friendly applications that solve real-world problems. The experience of working on production systems and seeing my code make a tangible difference solidified my commitment to becoming a professional .NET Developer."
+    journey: "Started my journey at FPT University in 2022 studying Software Engineering. Through hands-on projects and my internship at DENSO, I discovered my passion for requirements analysis and stakeholder management. The experience of working on production systems and translating business pain points into technical solutions solidified my commitment to becoming a professional Business Analyst."
   },
 
   careerGoals: {
-    short_term: "Seeking to begin my career as a .NET Developer, focusing on building robust web and desktop applications",
-    long_term: "Become an expert in .NET ecosystem and system architecture, contributing to large-scale enterprise applications",
-    interests: ["Web Development", "Desktop Applications", "System Integration", "Database Design", "UI/UX", "Performance Optimization"]
+    short_term: "Seeking to begin my career as a Business Analyst, focusing on requirements analysis, process optimization, and stakeholder management",
+    long_term: "Become an expert in business analysis and process improvement, contributing to large-scale digital transformation projects",
+    interests: ["Requirements Analysis", "Business Process Optimization", "System Integration", "Data Analysis", "UX Research", "Stakeholder Management", "Digital Transformation"]
   },
 
   personalityTraits: [
-    "Strong problem-solving mindset",
-    "Eager to learn new technologies",
-    "Team player with good communication skills",
-    "Detail-oriented and focused on code quality",
+    "Strong analytical and problem-solving mindset",
+    "Excellent communication and stakeholder management skills",
+    "Team player with ability to bridge business and technical teams",
+    "Detail-oriented and focused on delivering value",
     "Adaptable and open to feedback",
-    "Committed to continuous improvement"
+    "Committed to continuous improvement and data-driven decision making"
   ],
 
   references: {
@@ -207,7 +217,8 @@ Bạn có học bổng ${data.personalInfo.scholarship}.
 - Tôn giáo: ${data.personalInfo.religion}
 - Quốc tịch: ${data.personalInfo.nationality}
 - Tình trạng hôn nhân: ${data.personalInfo.maritalStatus}
-- Địa chỉ: ${data.personalInfo.address}
+- Quê quán: ${data.personalInfo.hometown}
+- Địa chỉ hiện tại: ${data.personalInfo.address}
 - Email: ${data.personalInfo.email}
 - Phone: ${data.personalInfo.phone}
 - Vị trí mong muốn: ${data.personalInfo.title}
@@ -222,13 +233,13 @@ ${data.experience.current.responsibilities.map(r => `- ${r}`).join('\n')}
 Kỹ năng đạt được: ${data.experience.current.skills_gained.join(', ')}
 
 === KỸ NĂNG CHUYÊN MÔN ===
-- Backend: ${data.technicalSkills.backend.join(', ')}
-- Frontend: ${data.technicalSkills.frontend.join(', ')}
-- Database: ${data.technicalSkills.database.join(', ')}
-- API: ${data.technicalSkills.api.join(', ')}
-- Styling: ${data.technicalSkills.styling.join(', ')}
-- Tools: ${data.technicalSkills.tools.join(', ')}
-- Other: ${data.technicalSkills.other.join(', ')}
+- Phân tích Kinh doanh: ${data.technicalSkills.businessAnalysis.join(', ')}
+- Phân tích Dữ liệu: ${data.technicalSkills.dataAnalysis.join(', ')}
+- Tài liệu & Mô hình hóa: ${data.technicalSkills.documentation.join(', ')}
+- Phương pháp: ${data.technicalSkills.methodologies.join(', ')}
+- Công cụ: ${data.technicalSkills.tools.join(', ')}
+- Kỹ thuật: ${data.technicalSkills.technical.join(', ')}
+- Kỹ năng mềm: ${data.technicalSkills.softSkills.join(', ')}
 
 === DỰ ÁN ===
 ${data.projects.map(p => `
@@ -251,11 +262,11 @@ ${c.title} (${c.issuer}, ${c.date})
 - Kỹ năng: ${c.skills.join(', ')}
 `).join('\n')}
 
-=== TẠI SAO CHỌN LẬP TRÌNH ===
+=== TẠI SAO CHỌN BUSINESS ANALYST ===
 Lý do:
-${data.whyProgramming.reasons.map(r => `- ${r}`).join('\n')}
+${data.whyBusinessAnalysis.reasons.map(r => `- ${r}`).join('\n')}
 
-Hành trình: ${data.whyProgramming.journey}
+Hành trình: ${data.whyBusinessAnalysis.journey}
 
 === MỤC TIÊU NGHỀ NGHIỆP ===
 - Ngắn hạn: ${data.careerGoals.short_term}
@@ -291,7 +302,8 @@ You have ${data.personalInfo.scholarship}.
 - Religion: ${data.personalInfo.religion}
 - Nationality: ${data.personalInfo.nationality}
 - Marital status: ${data.personalInfo.maritalStatus}
-- Address: ${data.personalInfo.address}
+- Hometown: ${data.personalInfo.hometown}
+- Current address: ${data.personalInfo.address}
 - Email: ${data.personalInfo.email}
 - Phone: ${data.personalInfo.phone}
 - Desired Position: ${data.personalInfo.title}
@@ -306,13 +318,13 @@ ${data.experience.current.responsibilities.map(r => `- ${r}`).join('\n')}
 Skills gained: ${data.experience.current.skills_gained.join(', ')}
 
 === TECHNICAL SKILLS ===
-- Backend: ${data.technicalSkills.backend.join(', ')}
-- Frontend: ${data.technicalSkills.frontend.join(', ')}
-- Database: ${data.technicalSkills.database.join(', ')}
-- API: ${data.technicalSkills.api.join(', ')}
-- Styling: ${data.technicalSkills.styling.join(', ')}
+- Business Analysis: ${data.technicalSkills.businessAnalysis.join(', ')}
+- Data Analysis: ${data.technicalSkills.dataAnalysis.join(', ')}
+- Documentation & Modeling: ${data.technicalSkills.documentation.join(', ')}
+- Methodologies: ${data.technicalSkills.methodologies.join(', ')}
 - Tools: ${data.technicalSkills.tools.join(', ')}
-- Other: ${data.technicalSkills.other.join(', ')}
+- Technical: ${data.technicalSkills.technical.join(', ')}
+- Soft Skills: ${data.technicalSkills.softSkills.join(', ')}
 
 === PROJECTS ===
 ${data.projects.map(p => `
@@ -335,11 +347,11 @@ ${c.title} (${c.issuer}, ${c.date})
 - Skills: ${c.skills.join(', ')}
 `).join('\n')}
 
-=== WHY PROGRAMMING ===
+=== WHY BUSINESS ANALYST ===
 Reasons:
-${data.whyProgramming.reasons.map(r => `- ${r}`).join('\n')}
+${data.whyBusinessAnalysis.reasons.map(r => `- ${r}`).join('\n')}
 
-Journey: ${data.whyProgramming.journey}
+Journey: ${data.whyBusinessAnalysis.journey}
 
 === CAREER GOALS ===
 - Short-term: ${data.careerGoals.short_term}

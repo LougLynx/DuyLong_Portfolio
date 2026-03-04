@@ -27,22 +27,22 @@ export const Experience = ({ t, experience, scrollToSection }) => {
 
   const visibleExperience = expanded ? sortedExperience : sortedExperience.slice(0, 3);
   return (
-    <section id="experience" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black/30 via-blue-950/30 to-black/30 backdrop-blur-sm relative z-10">
+    <section id="experience" className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900/30 backdrop-blur-sm relative z-10">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="section-title">
-            <Briefcase className="text-amber-400 drop-shadow-lg" />
-            <span className="bg-gradient-to-r from-amber-400 to-cyan-400 bg-clip-text text-transparent">{t.experience.title}</span>
+            <Briefcase className="text-cyan-400 drop-shadow-lg" />
+            <span className="text-cyan-400">{t.experience.title}</span>
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-amber-500 via-cyan-500 to-blue-500 mx-auto rounded-full shadow-lg shadow-cyan-500/50"></div>
+          <div className="w-24 h-1.5 bg-cyan-500 mx-auto rounded-full shadow-lg shadow-cyan-500/50"></div>
         </div>
         <div className="space-y-8">
           {visibleExperience.map((job, index) => (
-            <button key={index} onClick={() => setOpenItem(job)} className="w-full text-left bg-gradient-to-br from-cyan-500/5 via-blue-500/5 to-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-400/50 transition-all hover:shadow-2xl hover:shadow-cyan-500/10 hover:scale-[1.02] group">
+            <button key={index} onClick={() => setOpenItem(job)} className="w-full text-left bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-400/50 transition-all hover:shadow-2xl hover:shadow-cyan-500/10 hover:scale-[1.02] group">
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
                   <h3 className="text-xl font-bold group-hover:text-cyan-400 transition-colors">{job.position}</h3>
-                  <p className="text-transparent bg-gradient-to-r from-cyan-400 to-amber-400 bg-clip-text font-semibold">{job.company}</p>
+                  <p className="text-cyan-400 font-semibold">{job.company}</p>
                 </div>
                 <span className="text-gray-400 mt-2 md:mt-0 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">{job.period}</span>
               </div>
@@ -66,7 +66,7 @@ export const Experience = ({ t, experience, scrollToSection }) => {
               <span className="relative z-10 tracking-wide">
                 {(expanded ? t.experience.seeLess : t.experience.seeMore).trim().split(/\s+/).slice(0,2).join(' ')}
               </span>
-              <span className="pointer-events-none absolute left-6 right-6 -bottom-1 h-0.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-amber-500 opacity-0 scale-x-0 origin-left transition-all duration-300 group-hover:opacity-100 group-hover:scale-x-100"></span>
+              <span className="pointer-events-none absolute left-6 right-6 -bottom-1 h-0.5 bg-cyan-500 opacity-0 scale-x-0 origin-left transition-all duration-300 group-hover:opacity-100 group-hover:scale-x-100"></span>
             </button>
           </div>
         )}

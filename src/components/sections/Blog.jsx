@@ -39,11 +39,11 @@ export const Blog = ({ t, blogs, scrollToSection, language }) => {
       <section id="blog" className="py-20 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-block p-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl mb-4 border border-cyan-400/30 shadow-lg shadow-cyan-500/20">
+            <div className="inline-block p-3 bg-cyan-500/20 rounded-2xl mb-4 border border-cyan-400/30 shadow-lg shadow-cyan-500/20">
               <BookOpen className="w-8 h-8 text-cyan-400" />
             </div>
             <h2 className="section-title">
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-amber-400 bg-clip-text text-transparent leading-[1.1] md:leading-[1.1]">{t.blog.title}</span>
+              <span className="text-cyan-400 leading-[1.1] md:leading-[1.1]">{t.blog.title}</span>
             </h2>
             {t.blog.subtitle && (
               <p className="mt-2 text-sm text-gray-300">
@@ -57,7 +57,7 @@ export const Blog = ({ t, blogs, scrollToSection, language }) => {
               <article
                 key={blog.id}
                 onClick={() => setSelectedBlog(blog)}
-                className="group bg-gradient-to-br from-slate-800/90 via-blue-900/50 to-slate-800/90 backdrop-blur-xl rounded-2xl shadow-2xl shadow-cyan-500/10 border border-cyan-500/20 overflow-hidden hover:shadow-cyan-500/30 hover:border-cyan-400/40 transition-all duration-500 hover:scale-105 cursor-pointer"
+                className="group bg-slate-800/90 backdrop-blur-xl rounded-2xl shadow-2xl shadow-cyan-500/10 border border-cyan-500/20 overflow-hidden hover:shadow-cyan-500/30 hover:border-cyan-400/40 transition-all duration-500 hover:scale-105 cursor-pointer"
               >
                 <div className="relative overflow-hidden h-48">
                   <img 
@@ -65,7 +65,7 @@ export const Blog = ({ t, blogs, scrollToSection, language }) => {
                     alt={blog.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                  <div className="absolute inset-0 bg-slate-900/60"></div>
                 </div>
 
                 <div className="p-6">
@@ -86,7 +86,7 @@ export const Blog = ({ t, blogs, scrollToSection, language }) => {
                     {blog.tags.slice(0, 3).map((tag, index) => (
                       <span
                         key={index}
-                        className="px-2 py-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-full text-xs text-cyan-300"
+                        className="px-2 py-1 bg-cyan-500/20 border border-cyan-400/30 rounded-full text-xs text-cyan-300"
                       >
                         {tag}
                       </span>
@@ -108,7 +108,7 @@ export const Blog = ({ t, blogs, scrollToSection, language }) => {
                   {showAll ? getTwoWordLabel(t.blog.seeLess) : getTwoWordLabel(t.blog.seeMore)}
                 </span>
                 {/* animated underline for better UX */}
-                <span className="pointer-events-none absolute left-6 right-6 -bottom-1 h-0.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-amber-500 opacity-0 scale-x-0 origin-left transition-all duration-300 group-hover:opacity-100 group-hover:scale-x-100"></span>
+                <span className="pointer-events-none absolute left-6 right-6 -bottom-1 h-0.5 bg-cyan-500 opacity-0 scale-x-0 origin-left transition-all duration-300 group-hover:opacity-100 group-hover:scale-x-100"></span>
               </button>
             </div>
           )}

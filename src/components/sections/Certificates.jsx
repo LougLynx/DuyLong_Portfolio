@@ -27,31 +27,31 @@ export const Certificates = ({ t, certificates, scrollToSection }) => {
   const visibleCertificates = expanded ? sortedCertificates : sortedCertificates.slice(0, 3);
 
   return (
-    <section id="certificates" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black/30 via-blue-950/30 to-black/30 backdrop-blur-sm relative z-10">
+    <section id="certificates" className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900/30 backdrop-blur-sm relative z-10">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="section-title">
             <Award className="text-cyan-400 drop-shadow-lg" />
-            <span className="bg-gradient-to-r from-cyan-400 to-amber-400 bg-clip-text text-transparent">{t.certificates.title}</span>
+            <span className="text-cyan-400">{t.certificates.title}</span>
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-amber-500 via-cyan-500 to-blue-500 mx-auto rounded-full shadow-lg shadow-cyan-500/50"></div>
+          <div className="w-24 h-1.5 bg-cyan-500 mx-auto rounded-full shadow-lg shadow-cyan-500/50"></div>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {visibleCertificates.map((cert, index) => (
-            <div key={index} className="group bg-gradient-to-br from-cyan-500/5 via-blue-500/10 to-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-400/50 transition-all hover:shadow-2xl hover:shadow-cyan-500/20 hover:scale-[1.02]">
+            <div key={index} className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-400/50 transition-all hover:shadow-2xl hover:shadow-cyan-500/20 hover:scale-[1.02]">
               <div className="flex items-start justify-between mb-4">
-                <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 p-3 rounded-xl">
+                <div className="bg-cyan-500/20 p-3 rounded-xl">
                   <Award className="w-6 h-6 text-cyan-400" />
                 </div>
                 <span className="text-gray-400 text-sm bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">{cert.date}</span>
               </div>
-              <h3 className="text-lg font-bold mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-amber-400 group-hover:bg-clip-text transition-all">{cert.title}</h3>
-              <p className="text-transparent bg-gradient-to-r from-cyan-400 to-amber-400 bg-clip-text font-semibold mb-3">{cert.issuer}</p>
+              <h3 className="text-lg font-bold mb-2 group-hover:text-cyan-400 transition-all">{cert.title}</h3>
+              <p className="text-cyan-400 font-semibold mb-3">{cert.issuer}</p>
               
               <div className="mb-4">
                 <div className="flex flex-wrap gap-2">
                   {cert.skills.map((skill, skillIndex) => (
-                    <span key={skillIndex} className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 px-2 py-1 rounded-full text-xs border border-cyan-500/30 hover:border-cyan-400/50 hover:from-cyan-500/30 hover:to-blue-500/30 transition-all">
+                    <span key={skillIndex} className="bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded-full text-xs border border-cyan-500/30 hover:border-cyan-400/50 hover:bg-cyan-500/30 transition-all">
                       {skill}
                     </span>
                   ))}
@@ -80,7 +80,7 @@ export const Certificates = ({ t, certificates, scrollToSection }) => {
                 {expanded ? getTwoWordLabel(t.certificates.seeLess) : getTwoWordLabel(t.certificates.seeMore)}
               </span>
               {/* animated underline for better UX */}
-              <span className="pointer-events-none absolute left-6 right-6 -bottom-1 h-0.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-amber-500 opacity-0 scale-x-0 origin-left transition-all duration-300 group-hover:opacity-100 group-hover:scale-x-100"></span>
+              <span className="pointer-events-none absolute left-6 right-6 -bottom-1 h-0.5 bg-cyan-500 opacity-0 scale-x-0 origin-left transition-all duration-300 group-hover:opacity-100 group-hover:scale-x-100"></span>
             </button>
           </div>
         )}

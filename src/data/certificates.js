@@ -1,6 +1,38 @@
 export const getCertificates = (lang) => [
   {
     title: lang === 'en' 
+      ? "User Experience Research and Design" 
+      : "Nghiên cứu và Thiết kế Trải nghiệm Người dùng",
+    issuer: "Coursera",
+    date: "03/2026",
+    credentialId: "c3595a8dc5a3ae77f1dc52cfbbc4fd56",
+    credentialUrl: "https://coursera.org/share/c3595a8dc5a3ae77f1dc52cfbbc4fd56",
+    skills: lang === 'en' 
+      ? [
+        "User Experience (UX) Research",
+        "User Interface (UI) Design",
+        "Wireframing",
+        "Prototyping",
+        "Usability Testing",
+        "User Personas",
+        "User Journey Mapping",
+        "Information Architecture",
+        "Design Thinking"
+      ]
+      : [
+        "Nghiên cứu trải nghiệm người dùng (UX)",
+        "Thiết kế giao diện người dùng (UI)",
+        "Wireframing",
+        "Tạo mẫu thử nghiệm",
+        "Kiểm thử khả dụng",
+        "Personas người dùng",
+        "Lập bản đồ hành trình người dùng",
+        "Kiến trúc thông tin",
+        "Tư duy thiết kế"
+      ]
+  },
+  {
+    title: lang === 'en' 
       ? "Project Management Principles and Practices" 
       : "Nguyên tắc và Thực hành Quản lý Dự án",
     issuer: "Coursera",

@@ -36,7 +36,7 @@ const codeSnippets = [
   'import { useState, useEffect } from "react";',
   'const handleClick = (e) => e.preventDefault();',
   'tailwind.config.js',
-  'background: linear-gradient(to right, #06b6d4, #3b82f6);',
+  'background: #06b6d4;',
   'SELECT COUNT(*) FROM products;',
   'mkdir project && cd project',
   'const token = localStorage.getItem("token");',
@@ -84,7 +84,7 @@ export const FloatingCodes = () => {
             opacity: code.opacity,
           }}
         >
-          <span className="inline-block px-2 py-1 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-transparent rounded border border-cyan-500/20 backdrop-blur-sm hover:border-cyan-400/40 transition-all">
+          <span className="inline-block px-2 py-1 bg-cyan-500/5 rounded border border-cyan-500/20 backdrop-blur-sm hover:border-cyan-400/40 transition-all">
             {code.text}
           </span>
         </div>

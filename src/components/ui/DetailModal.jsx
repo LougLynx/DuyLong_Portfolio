@@ -76,7 +76,7 @@ export const DetailModal = ({ isOpen, onClose, title, subtitle, period, descript
         </button>
         <div className="p-6 space-y-4 overflow-y-auto">
           <div>
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-amber-400 bg-clip-text text-transparent">{title}</h3>
+            <h3 className="text-2xl font-bold text-cyan-400">{title}</h3>
             {subtitle && <p className="text-cyan-300/80 font-semibold">{subtitle}</p>}
             {period && <p className="text-gray-400 text-sm mt-1">{period}</p>}
           </div>
